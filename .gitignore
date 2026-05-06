@@ -1,0 +1,52 @@
+# ── Whitelist approach ───────────────────────────────────────────────────────
+# Block everything by default. Only explicitly listed items are tracked.
+# Nothing internal can ever be accidentally committed.
+
+/*
+/.*
+
+# ── Root files ───────────────────────────────────────────────────────────────
+
+!/.gitignore
+!/CLAUDE.md
+!/LICENSE
+!/README.md
+!/WHATS-NEW.md
+!/setup.sh
+!/.env.example
+!/.gitlab-ci.yml
+
+# ── Public folders (all contents allowed) ────────────────────────────────────
+
+!/commands/
+!/commands/**
+
+!/workflows/
+!/workflows/**
+
+!/integrations/
+!/integrations/**
+
+!/guides/
+!/guides/**
+
+!/Scripts/
+!/Scripts/**
+Scripts/__pycache__/
+
+!/tools/
+!/tools/**
+tools/**/__pycache__/
+
+# ── docs/ — explicitly list allowed files, block everything else ─────────────
+
+!/docs/
+docs/*
+docs/.*
+!docs/GOLDEN_RULES.md
+!docs/INTENT_MAPPING.md
+!docs/MCP_SETUP.md
+!docs/TOOL_REFERENCE.md
+!docs/WORKFLOWS.md
+!docs/Agentic-Marketing-Mastermind-Setup-Guide.html
+!docs/Auto\ set\ up\ SA.html
